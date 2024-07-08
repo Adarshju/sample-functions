@@ -15,8 +15,6 @@ function calculateFactorial(n) {
 
 console.log(calculateFactorial(5));
 
-
-
 // Anonymus Fuction with Retrun array of double number
 let arr = [3, 5, 7, 4, 8];
 
@@ -31,16 +29,29 @@ let doubleArray = (arr) => {
 
 console.log(`Array Of  Each Double = ${doubleArray(arr)}`);
 
-
 //  FUCTION  ONLY one number as a parameter
 
-let factorial =nums=>{
-    let factorial_num=1
-    for(nums;nums>1;nums--){
-       factorial_num*=nums
-    }
-    return factorial_num
+let factorial = (nums) => {
+  let factorial_num = 1;
+  for (nums; nums > 1; nums--) {
+    factorial_num *= nums;
+  }
+  return factorial_num;
+};
+console.log(factorial(5));
+
+// callback function as a parameter and return new array
+
+function processArray(arr, callback) {
+  let new_arr = [];
+  for (let i = 0; i < arr.length; i++) {
+    new_arr.push(callback(arr[i]));
+  }
+  return new_arr;
 }
-console.log(factorial (5));
 
+let arr_num = [2, 4, 6, 9, 2, 5];
 
+let processArray_res = processArray(arr_num, function (num) {
+  return num * 2;
+});
