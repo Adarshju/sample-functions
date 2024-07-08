@@ -55,3 +55,4 @@ let arr_num = [2, 4, 6, 9, 2, 5];
 let processArray_res = processArray(arr_num, function (num) {
   return num * 2;
 });
+console.log(processArray_res)
